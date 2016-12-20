@@ -1,14 +1,18 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
-
-client.on('ready', function() {
-  console.log('Logged in as ${client.user.username}!');
+var Discord = require('discord.io');
+var bot = new Discord.Client({
+    token: "MjQ3NDkxNzI4NDczNDU2NjQw.Czs3fQ.iN44TSmRK-jwHWvluQCDy2O-vGk",
+    autorun: true
 });
 
-client.on('message', function(msg) {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
+bot.on('ready', function() {
+    console.log(bot.username + " - (" + bot.id + ")");
 });
 
-client.login('MjQ3NDkxNzI4NDczNDU2NjQw.Czs3fQ.iN44TSmRK-jwHWvluQCDy2O-vGk');
+bot.on('message', function(user, userID, channelID, message, event) {
+    if (message === "ping") {
+        bot.sendMessage({
+            to: channelID,
+            message: "pong"
+        });
+    }
+});
