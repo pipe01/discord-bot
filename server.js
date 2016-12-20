@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.on('ready', () => {
+client.on('ready', function() {
   console.log(`Logged in as ${client.user.username}!`);
 });
 
-client.on('message', msg => {
+client.on('message', function(msg) {
   if (msg.content === 'ping') {
     msg.reply('Pong!');
   }
