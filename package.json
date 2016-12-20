@@ -1,0 +1,12 @@
+{
+  "name": "discord-bot",
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "dependencies": {
+    "discord.js": "^10.0.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js"
+}
